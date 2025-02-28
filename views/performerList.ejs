@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Performer List</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+</head>
+<body>
+<h1>All Performers</h1>
+<p><a href="/">Home</a> | <a href="/performers/add">Add Performer</a></p>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Genre</th>
+        <th>Year Started</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% performers.forEach(performer => { %>
+        <tr>
+            <td><%= performer.id %></td>
+            <td><%= performer.performer_name %></td>
+            <td><%= performer.genre %></td>
+            <td><%= performer.year_started %></td>
+            <td><a href="/performers/<%= performer.id %>/edit">Edit</a></td>
+            <td><a href="/performers/<%= performer.id %>/delete">Delete</a></td>
+        </tr>
+    <% }) %>
+    </tbody>
+</table>
+</body>
+</html>

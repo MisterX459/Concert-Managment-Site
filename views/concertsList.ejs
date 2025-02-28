@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Concert List</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+</head>
+<body>
+<h1>All Concerts</h1>
+<p><a href="/">Home</a> | <a href="/concerts/add">Add Concert</a></p>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Location</th>
+        <th>Capacity</th>
+        <th>Details</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% concerts.forEach(con => { %>
+        <tr>
+            <td><%= con.id %></td>
+            <td><%= con.name %></td>
+            <td><%= con.event_date %></td>
+            <td><%= con.location %></td>
+            <td><%= con.capacity %></td>
+            <td><a href="/concerts/<%= con.id %>">View</a></td>
+            <td><a href="/concerts/<%= con.id %>/edit">Edit</a></td>
+            <td><a href="/concerts/<%= con.id %>/delete">Delete</a></td>
+        </tr>
+    <% }) %>
+    </tbody>
+</table>
+</body>
+</html>

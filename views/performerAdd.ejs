@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Performer</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+</head>
+<body>
+<h1>Add a New Performer</h1>
+<form action="/performers/add" method="post">
+    <label>Performer Name:</label>
+    <input type="text" name="performer_name" required>
+    <br><br>
+
+    <label>Genre:</label>
+    <input type="text" name="genre" required>
+    <br><br>
+
+    <label>Year Started:</label>
+    <input type="number" name="year_started" required>
+    <br><br>
+
+    <button type="submit">Add Performer</button>
+    <a href="/performers">Cancel</a>
+</form>
+</body>
+</html>

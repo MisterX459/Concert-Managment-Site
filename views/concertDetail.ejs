@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Concert Detail</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+</head>
+<body>
+<h1>Concert Details</h1>
+<p><strong>ID:</strong> <%= concert.id %></p>
+<p><strong>Name:</strong> <%= concert.name %></p>
+<p><strong>Date:</strong> <%= concert.event_date %></p>
+<p><strong>Location:</strong> <%= concert.location %></p>
+<p><strong>Capacity:</strong> <%= concert.capacity %></p>
+
+<h2>Performers for this Concert</h2>
+<% if (performers.length === 0) { %>
+    <p>No performers assigned yet.</p>
+<% } else { %>
+    <ul>
+        <% performers.forEach(p => { %>
+            <li>
+                <strong><%= p.performer_name %></strong>
+                (Genre: <%= p.genre %>, Started: <%= p.year_started %>)
+                | Stage Time: <%= p.stage_time %>
+            </li>
+        <% }) %>
+    </ul>
+<% } %>
+
+<p><a href="/concerts">Back to Concerts</a></p>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Performer</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+</head>
+<body>
+<h1>Confirm Delete</h1>
+<p>Are you sure you want to delete this performer?</p>
+<ul>
+    <li>ID: <%= performer.id %></li>
+    <li>Name: <%= performer.performer_name %></li>
+    <li>Genre: <%= performer.genre %></li>
+    <li>Year Started: <%= performer.year_started %></li>
+</ul>
+<form action="/performers/<%= performer.id %>/delete" method="post">
+    <button type="submit">Delete</button>
+    <a href="/performers">Cancel</a>
+</form>
+</body>
+</html>

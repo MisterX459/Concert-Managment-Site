@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Concert</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+</head>
+<body>
+<h1>Add a New Concert</h1>
+<form action="/concerts/add" method="post">
+    <label>Name:</label>
+    <input type="text" name="name" required>
+    <br><br>
+
+    <label>Event Date:</label>
+    <input type="date" name="event_date" required>
+    <br><br>
+
+    <label>Location:</label>
+    <input type="text" name="location" required>
+    <br><br>
+
+    <label>Capacity:</label>
+    <input type="number" name="capacity" required>
+    <br><br>
+
+    <button type="submit">Add Concert</button>
+    <a href="/concerts">Cancel</a>
+</form>
+</body>
+</html>

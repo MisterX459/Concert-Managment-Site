@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assign Performer to Concert</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+</head>
+<body>
+<h1>Assign Performer to Concert</h1>
+<form action="/assignments/add" method="post">
+    <label>Select Concert:</label>
+    <select name="concert_id" required>
+        <% concerts.forEach(c => { %>
+            <option value="<%= c.id %>"><%= c.name %></option>
+        <% }) %>
+    </select>
+    <br><br>
+
+    <label>Select Performer:</label>
+    <select name="performer_id" required>
+        <% performers.forEach(p => { %>
+            <option value="<%= p.id %>"><%= p.performer_name %></option>
+        <% }) %>
+    </select>
+    <br><br>
+
+    <label>Stage Time:</label>
+    <input type="text" name="stage_time" placeholder="e.g. 20:00" required>
+    <br><br>
+
+    <button type="submit">Assign</button>
+    <a href="/">Cancel</a>
+</form>
+</body>
+</html>

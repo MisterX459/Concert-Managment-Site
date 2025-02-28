@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Concert</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+</head>
+<body>
+<h1>Confirm Delete</h1>
+<p>Are you sure you want to delete this concert?</p>
+<ul>
+    <li>ID: <%= concert.id %></li>
+    <li>Name: <%= concert.name %></li>
+    <li>Date: <%= concert.event_date %></li>
+    <li>Location: <%= concert.location %></li>
+    <li>Capacity: <%= concert.capacity %></li>
+</ul>
+<form action="/concerts/<%= concert.id %>/delete" method="post">
+    <button type="submit">Delete</button>
+    <a href="/concerts">Cancel</a>
+</form>
+</body>
+</html>
